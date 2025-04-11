@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Lightbulb, Cpu, Leaf, Flask, Cloud } from 'lucide-react';
+import { ArrowRight, Lightbulb, Cpu, Leaf, TestTube, Cloud } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -71,7 +71,7 @@ const InnovationPage = () => {
     {
       title: "Neural Interface Controls",
       description: "Exploring next-generation vehicle interaction through neural interfaces that can interpret driver intent through brainwave patterns.",
-      icon: <Flask className="h-6 w-6" />,
+      icon: <TestTube className="h-6 w-6" />,
       image: "https://images.unsplash.com/photo-1626426132933-4fae28c3cc61?auto=format&fit=crop&q=80"
     },
     {
