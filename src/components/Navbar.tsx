@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronRight } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { label: 'Models', path: '/models' },
+    { label: 'Innovation', path: '/innovation' },
+    { label: 'Technology', path: '/technology' },
+    { label: 'Design', path: '/design' }
+  ];
+
+  // Close mobile menu when changing routes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -23,7 +37,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <div className="relative h-8 w-12 mr-2">
             <svg 
               viewBox="0 0 48 48" 
@@ -39,18 +53,22 @@ const Navbar = () => {
             </svg>
           </div>
           <span className="text-xl font-bold tracking-tighter">BMW Future</span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {['Models', 'Innovation', 'Technology', 'Design'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`}
-              className="text-sm uppercase tracking-wider hover:text-bmw-electric transition-colors"
+          {navItems.map((item) => (
+            <Link 
+              key={item.label} 
+              to={item.path}
+              className={`text-sm uppercase tracking-wider transition-colors ${
+                location.pathname === item.path 
+                  ? 'text-bmw-electric' 
+                  : 'hover:text-bmw-electric'
+              }`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
           <Button className="bg-bmw-blue hover:bg-bmw-electric text-white">
             Experience Now
@@ -74,16 +92,17 @@ const Navbar = () => {
         style={{ top: '60px' }}
       >
         <nav className="container mx-auto px-4 py-6 flex flex-col space-y-6">
-          {['Models', 'Innovation', 'Technology', 'Design'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`}
-              className="text-lg py-2 border-b border-gray-800 flex justify-between items-center"
-              onClick={() => setIsMenuOpen(false)}
+          {navItems.map((item) => (
+            <Link 
+              key={item.label} 
+              to={item.path}
+              className={`text-lg py-2 border-b border-gray-800 flex justify-between items-center ${
+                location.pathname === item.path ? 'text-bmw-electric' : ''
+              }`}
             >
-              {item}
+              {item.label}
               <ChevronRight size={20} />
-            </a>
+            </Link>
           ))}
           <Button className="bg-bmw-blue hover:bg-bmw-electric text-white w-full mt-4">
             Experience Now

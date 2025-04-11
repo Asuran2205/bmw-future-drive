@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center mb-6">
+            <Link to="/" className="flex items-center mb-6">
               <div className="relative h-8 w-12 mr-2">
                 <svg 
                   viewBox="0 0 48 48" 
@@ -24,7 +25,7 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="text-xl font-bold tracking-tighter">BMW Future</span>
-            </div>
+            </Link>
             <p className="text-gray-400 mb-6">
               Experience tomorrow's mobility today with BMW's vision for the future of driving.
             </p>
@@ -48,19 +49,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { label: "Models", href: "#models" },
-                { label: "Innovation", href: "#innovation" },
-                { label: "Technology", href: "#technology" },
-                { label: "Design", href: "#design" },
+                { label: "Models", href: "/models" },
+                { label: "Innovation", href: "/innovation" },
+                { label: "Technology", href: "/technology" },
+                { label: "Design", href: "/design" },
                 { label: "Sustainability", href: "#" }
               ].map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="text-gray-400 hover:text-bmw-electric transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
