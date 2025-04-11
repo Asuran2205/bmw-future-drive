@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import BMWCanvas from './BMWCanvas';
 
 const HeroSection = () => {
   return (
@@ -63,25 +64,18 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="relative h-72 md:h-96 lg:h-[500px] animate-float shadow-2xl rounded-lg overflow-hidden group">
-            {/* 4K BMW Car Image */}
-            <img 
-              src="https://images.unsplash.com/photo-1607603750909-408f4cbcf98d?q=80&w=2070&auto=format&fit=crop" 
-              alt="BMW Vision Next Concept" 
-              className="absolute inset-0 w-full h-full object-cover rounded-lg transition-transform duration-700 group-hover:scale-105"
-            />
+          <div className="relative h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl group">
+            {/* BMW 3D Model */}
+            <BMWCanvas />
             
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-bmw-dark/70 via-transparent to-transparent"></div>
+            {/* Overlay gradient for better text visibility */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-bmw-dark/40 via-transparent to-transparent pointer-events-none"></div>
             
             {/* Highlight effects */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="absolute bottom-0 left-0 right-0 p-6 pointer-events-none">
               <div className="h-0.5 w-20 bg-bmw-electric mb-4"></div>
               <p className="text-white/90 text-sm font-light">BMW Vision Next Concept</p>
             </div>
-            
-            {/* Dynamic light effect */}
-            <div className="absolute -right-20 -top-20 w-40 h-40 bg-bmw-electric/20 rounded-full blur-xl animate-pulse-glow"></div>
           </div>
         </div>
       </div>
