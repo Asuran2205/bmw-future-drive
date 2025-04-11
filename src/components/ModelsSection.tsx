@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface ModelCardProps {
   title: string;
@@ -11,11 +12,12 @@ interface ModelCardProps {
     label: string;
     value: string;
   }[];
+  id: string;
   isFeatured?: boolean;
   delay: number;
 }
 
-const ModelCard: React.FC<ModelCardProps> = ({ title, subtitle, stats, isFeatured = false, delay }) => {
+const ModelCard: React.FC<ModelCardProps> = ({ title, subtitle, stats, id, isFeatured = false, delay }) => {
   return (
     <Card 
       className={`overflow-hidden group transition-all duration-300 ${
@@ -77,17 +79,19 @@ const ModelCard: React.FC<ModelCardProps> = ({ title, subtitle, stats, isFeature
           ))}
         </div>
         
-        <Button 
-          variant={isFeatured ? "default" : "outline"} 
-          className={`w-full group ${
-            isFeatured 
-              ? 'bg-bmw-electric hover:bg-bmw-blue' 
-              : 'border-white/20 hover:border-white/40'
-          }`}
-        >
-          <span>Explore</span>
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Button>
+        <Link to={`/models/${id}`}>
+          <Button 
+            variant={isFeatured ? "default" : "outline"} 
+            className={`w-full group ${
+              isFeatured 
+                ? 'bg-bmw-electric hover:bg-bmw-blue' 
+                : 'border-white/20 hover:border-white/40'
+            }`}
+          >
+            <span>Explore</span>
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );
@@ -96,6 +100,7 @@ const ModelCard: React.FC<ModelCardProps> = ({ title, subtitle, stats, isFeature
 const ModelsSection = () => {
   const models = [
     {
+      id: "vision-next",
       title: "Vision NEXT",
       subtitle: "Electric Concept",
       stats: [
@@ -107,6 +112,7 @@ const ModelsSection = () => {
       delay: 100
     },
     {
+      id: "ix-flow",
       title: "iX Flow",
       subtitle: "Autonomous SUV",
       stats: [
@@ -117,6 +123,7 @@ const ModelsSection = () => {
       delay: 200
     },
     {
+      id: "i8-evolution",
       title: "i8 Evolution",
       subtitle: "Sports Hybrid",
       stats: [
@@ -141,6 +148,14 @@ const ModelsSection = () => {
           <p className="text-gray-300">
             Discover BMW's next generation of vehicles that define the future of luxury, performance, and sustainability.
           </p>
+          <div className="mt-6">
+            <Link to="/explore-models">
+              <Button className="bg-bmw-blue hover:bg-bmw-electric text-white group">
+                View All Models
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

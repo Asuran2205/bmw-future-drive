@@ -50,10 +50,11 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { label: "Models", href: "/models" },
+                { label: "Explore All Models", href: "/explore-models" },
+                { label: "Design Gallery", href: "/design-gallery" },
                 { label: "Innovation", href: "/innovation" },
                 { label: "Technology", href: "/technology" },
-                { label: "Design", href: "/design" },
-                { label: "Sustainability", href: "#" }
+                { label: "Design", href: "/design" }
               ].map((link, index) => (
                 <li key={index}>
                   <Link 
@@ -71,19 +72,28 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
               {[
-                { label: "Test Drive", href: "#" },
-                { label: "Financing", href: "#" },
+                { label: "Test Drive", href: "/test-drive" },
+                { label: "Financing", href: "/financing" },
                 { label: "Configurator", href: "#" },
                 { label: "Find a Dealer", href: "#" },
                 { label: "Support", href: "#" }
               ].map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-bmw-electric transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <a 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-bmw-electric transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link 
+                      to={link.href} 
+                      className="text-gray-400 hover:text-bmw-electric transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

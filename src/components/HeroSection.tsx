@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const carRef = useRef<HTMLDivElement>(null);
@@ -50,13 +51,17 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-bmw-blue hover:bg-bmw-electric text-white group">
-                Explore Models 
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" className="border-white/20 hover:border-white/50">
-                Watch the Film
-              </Button>
+              <Link to="/explore-models">
+                <Button className="bg-bmw-blue hover:bg-bmw-electric text-white group">
+                  Explore Models 
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+              <Link to="/design-gallery">
+                <Button variant="outline" className="border-white/20 hover:border-white/50">
+                  Design Gallery
+                </Button>
+              </Link>
             </div>
             
             <div className="pt-6 flex items-center space-x-6">

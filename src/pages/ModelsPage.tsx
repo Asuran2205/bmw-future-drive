@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 
 const ModelsPage = () => {
   const models = [
@@ -73,6 +74,18 @@ const ModelsPage = () => {
               <p className="text-xl text-gray-300">
                 Explore our visionary concept vehicles and upcoming models that represent the next evolution of BMW's commitment to innovation, performance, and sustainability.
               </p>
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <Link to="/explore-models">
+                  <Button className="bg-bmw-blue hover:bg-bmw-electric text-white">
+                    Explore All Models
+                  </Button>
+                </Link>
+                <Link to="/design-gallery">
+                  <Button variant="outline" className="border-white/20 hover:border-white/40">
+                    Design Gallery
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             {models.map((model, index) => (
@@ -91,10 +104,12 @@ const ModelsPage = () => {
                     ))}
                   </div>
                   
-                  <Button className="bg-bmw-blue hover:bg-bmw-electric text-white group">
-                    Discover {model.name}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <Link to={`/models/${model.id}`}>
+                    <Button className="bg-bmw-blue hover:bg-bmw-electric text-white group">
+                      Discover {model.name}
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </Link>
                 </div>
                 <div className={`relative h-80 md:h-96 rounded-lg overflow-hidden order-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <img 
