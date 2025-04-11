@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ZapFast, ShieldCheck, Smartphone, Gauge, Brain } from 'lucide-react';
+import { Zap, ShieldCheck, Smartphone, Gauge, Brain } from 'lucide-react';
 
 interface TechTabProps {
   icon: React.ReactNode;
@@ -111,7 +111,7 @@ const TechnologySection = () => {
   const technologies = [
     {
       id: "electric",
-      icon: <ZapFast className="h-5 w-5" />,
+      icon: <Zap className="h-5 w-5" />,
       title: "Electric Drive",
       description: "BMW's next generation electric powertrain delivers exceptional performance with zero emissions, redefining the driving experience.",
       features: [
