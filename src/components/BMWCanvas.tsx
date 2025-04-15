@@ -3,7 +3,11 @@ import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { BMWCarModel } from './BMWCarModel';
 
-const BMWCanvas = () => {
+interface BMWCanvasProps {
+  modelPath?: string;
+}
+
+const BMWCanvas = ({ modelPath = '/your-model.glb' }: BMWCanvasProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +23,7 @@ const BMWCanvas = () => {
     <div className="w-full h-full rounded-lg overflow-hidden relative">
       <Canvas shadows dpr={[1, 2]}>
         <Suspense fallback={null}>
-          <BMWCarModel />
+          <BMWCarModel modelPath={modelPath} />
         </Suspense>
       </Canvas>
       
