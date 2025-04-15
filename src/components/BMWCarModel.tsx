@@ -61,9 +61,9 @@ export function BMWCarModel({ rotate = true }) {
         
         {/* BMW logo front */}
         <mesh position={[0, 0.4, 2.01]}>
-          <cylinder args={[0.15, 0.15, 0.05, 32]}>
+          <Cylinder args={[0.15, 0.15, 0.05, 32]}>
             <meshStandardMaterial color="#333333" />
-          </cylinder>
+          </Cylinder>
         </mesh>
       </group>
       
