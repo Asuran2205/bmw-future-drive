@@ -30,7 +30,7 @@ const Index = () => {
                 title: "Innovation",
                 description: "Discover the groundbreaking innovations that are shaping the future of mobility and driving experience.",
                 link: "/innovation",
-                image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=300&h=200"
+                 image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=300&h=200"
               },
               {
                 title: "Technology",
@@ -42,7 +42,7 @@ const Index = () => {
                 title: "Design",
                 description: "Experience BMW's design philosophy that balances innovation with heritage, creating vehicles that are unmistakably BMW.",
                 link: "/design",
-                image: "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?auto=format&fit=crop&q=80&w=300&h=200"
+               image: "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?auto=format&fit=crop&q=80&w=300&h=200"
               }
             ].map((item, index) => (
               <div key={index} className="bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10 hover:border-bmw-electric/30 transition-all group">

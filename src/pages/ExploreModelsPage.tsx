@@ -5,6 +5,9 @@ import { ArrowRight, Filter, Sliders } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BMW_Electric from '@/assets/images/bmw_electric.jpg'
+import BMW_Luxury from '@/assets/images/BMW_LUXURY.jpeg'
+import BMW_Vision from '@/assets/images/vision_next.jpg'
 
 const ExploreModelsPage = () => {
   const modelCategories = [
@@ -12,7 +15,7 @@ const ExploreModelsPage = () => {
       id: 'electric',
       name: 'Electric',
       description: 'Sustainable mobility with zero emissions',
-      image: 'https://images.unsplash.com/photo-1593941707882-a5bba53cbb76?auto=format&fit=crop&q=80&w=1200',
+      image: BMW_Electric,
       models: [
         { id: 'vision-next', name: 'Vision NEXT', type: 'Concept' },
         { id: 'ix-flow', name: 'iX Flow', type: 'SUV' }
@@ -31,7 +34,7 @@ const ExploreModelsPage = () => {
       id: 'luxury',
       name: 'Luxury',
       description: 'Uncompromising comfort and sophistication',
-      image: 'https://images.unsplash.com/photo-1549399542-7e8f2e928464?auto=format&fit=crop&q=80&w=1200',
+      image: BMW_Luxury,
       models: [
         { id: 'i7-luxury', name: 'i7 Luxury', type: 'Sedan' }
       ]
@@ -165,19 +168,19 @@ const ExploreModelsPage = () => {
               <div className="relative">
                 <div className="aspect-video rounded-lg overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80&w=2000" 
+                    src= {BMW_Vision}
                     alt="Vision NEXT" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 
-                <div className="absolute -bottom-10 -right-10 md:bottom-10 md:right-10 bg-bmw-blue/90 backdrop-blur-sm p-4 md:p-6 rounded-lg max-w-xs">
+                {/* <div className="absolute -bottom-10 -right-10 md:bottom-10 md:right-10 bg-bmw-blue/90 backdrop-blur-sm p-4 md:p-6 rounded-lg max-w-xs">
                   <p className="text-sm md:text-base">
                     "The Vision NEXT represents a paradigm shift in how we think about automotive design, 
                     sustainability, and the driving experience of the future."
                   </p>
                   <p className="text-bmw-electric font-semibold mt-4">BMW Design Director</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

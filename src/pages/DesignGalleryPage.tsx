@@ -4,6 +4,19 @@ import { Lightbulb, Paintbrush, Maximize2, ChevronRight, ChevronLeft, X } from '
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Design_full from '@/assets/images/design_gallery.jpg';
+import Vision_img from '@/assets/images/vision_next.jpg';
+import Kidney_grill from '@/assets/images/kidney_grill.webp';
+import Interior_img from '@/assets/images/interior_design.jpg';
+import BMW_Doors from '@/assets/images/bmw_doors.jpg';
+import BMW_Interior from '@/assets/images/bmw_interior.jpg';
+import BMW_Urban from '@/assets/images/bmw_urban_suite.jpg';
+import bmw_wheel from '@/assets/images/bmw_wheel.jpg';
+import bmw_lounge from '@/assets/images/bmw_lounge.webp';
+import BMW_LIGHT from '@/assets/images/BMW_LIGHT.avif';
+import vision_interior from '@/assets/images/vision_interior.webp'
+import bmw_i7_luxury from '@/assets/images/bmw_i7_luxury.jpg';
+import bmw_philosophy from '@/assets/images/bmw_philosophy.jpeg'
 
 const DesignGalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -23,56 +36,56 @@ const DesignGalleryPage = () => {
       title: 'Vision NEXT Exterior',
       description: 'Revolutionary aerodynamic design with flowing lines and dynamic proportions.',
       category: 'exterior',
-      image: 'https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80'
+      image: Vision_img
     },
     {
       id: 2,
       title: 'Illuminated Kidney Grille',
       description: 'The iconic BMW kidney grille reimagined with integrated LED illumination.',
       category: 'details',
-      image: 'https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80'
+      image: Kidney_grill
     },
     {
       id: 3,
       title: 'Sustainable Interior Concept',
       description: 'Luxurious cabin design using recycled and sustainable materials.',
       category: 'interior',
-      image: 'https://images.unsplash.com/photo-1544729694-14d82585e25f?auto=format&fit=crop&q=80'
+      image: Interior_img
     },
     {
       id: 4,
       title: 'i8 Evolution Doors',
       description: 'Iconic butterfly doors designed for both aesthetics and functionality.',
       category: 'details',
-      image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80'
+      image: BMW_Doors
     },
     {
       id: 5,
       title: 'Minimalist Dashboard Design',
       description: 'Clean, driver-focused cockpit with intuitive controls and displays.',
       category: 'interior',
-      image: 'https://images.unsplash.com/photo-1543857182-68106299b6b2?auto=format&fit=crop&q=80'
+      image: BMW_Interior
     },
     {
       id: 6,
       title: 'Vision Urban Mobility',
       description: 'Future concept exploring transportation in high-density urban environments.',
       category: 'concept',
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80'
+      image: BMW_Urban
     },
     {
       id: 7,
       title: 'Aerodynamic Wheel Design',
       description: 'Innovative wheel architecture that reduces drag while maximizing cooling for brakes.',
       category: 'details',
-      image: 'https://images.unsplash.com/photo-1595352401217-8e2e6a79cbb3?auto=format&fit=crop&q=80'
+      image: bmw_wheel
     },
     {
       id: 8,
       title: 'Luxury Lounge Concept',
       description: 'Executive seating concept for autonomous luxury vehicles.',
       category: 'interior',
-      image: 'https://images.unsplash.com/photo-1562856753-067a2de293de?auto=format&fit=crop&q=80'
+      image: bmw_lounge
     },
     {
       id: 9,
@@ -86,21 +99,21 @@ const DesignGalleryPage = () => {
       title: 'Laser Light Technology',
       description: 'Advanced headlight system that extends visibility while reducing energy consumption.',
       category: 'details',
-      image: 'https://images.unsplash.com/photo-1577326591123-2f90c6b58ff7?auto=format&fit=crop&q=80'
+      image: BMW_LIGHT
     },
     {
       id: 11,
       title: 'Autonomous Concept Interior',
       description: 'Transformable interior space that adapts to different usage scenarios.',
       category: 'concept',
-      image: 'https://images.unsplash.com/photo-1582850135613-64011a0c3496?auto=format&fit=crop&q=80'
+      image: vision_interior
     },
     {
       id: 12,
       title: 'i7 Luxury Profile',
       description: 'Elegant silhouette that combines classic proportions with modern detailing.',
       category: 'exterior',
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80'
+      image: bmw_i7_luxury
     }
   ];
   
@@ -115,7 +128,7 @@ const DesignGalleryPage = () => {
         {/* Hero Section */}
         <section className="relative h-[60vh] overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1600705722908-bbc52fb66af2?auto=format&fit=crop&q=80&w=2000" 
+            src={Design_full}
             alt="BMW Design Gallery" 
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -233,7 +246,7 @@ const DesignGalleryPage = () => {
               
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1607662551239-fa8fb2f61c95?auto=format&fit=crop&q=80&w=1200" 
+                  src={bmw_philosophy}
                   alt="BMW Design Philosophy" 
                   className="rounded-lg"
                 />

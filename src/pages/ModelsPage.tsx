@@ -5,6 +5,10 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
+import vision_next from '@/assets/images/vision_next.jpg';
+import ixflow from '@/assets/images/ix-flow.jpg';
+import i8evolution from '@/assets/images/i8-evolution.jpg';
+import i7_luxury from '@/assets/images/i7_luxury.jpg';
 
 const ModelsPage = () => {
   const models = [
@@ -13,7 +17,7 @@ const ModelsPage = () => {
       name: 'Vision NEXT',
       category: 'Electric Concept',
       description: 'A revolutionary concept car that showcases BMW\'s vision for the future of mobility. Featuring autonomous driving, sustainable materials, and cutting-edge technology.',
-      image: 'https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80',
+      image: vision_next,
       specs: [
         { label: 'Range', value: '700 km' },
         { label: 'Acceleration', value: '2.8s' },
@@ -26,7 +30,7 @@ const ModelsPage = () => {
       name: 'iX Flow',
       category: 'Autonomous SUV',
       description: 'The future of SUVs with color-changing e-ink exterior technology, fully autonomous driving capabilities, and a spacious interior designed for comfort and entertainment.',
-      image: 'https://images.unsplash.com/photo-1556800572-1b8aeef2c54f?auto=format&fit=crop&q=80',
+      image: ixflow,
       specs: [
         { label: 'Range', value: '620 km' },
         { label: 'Acceleration', value: '3.5s' },
@@ -39,7 +43,7 @@ const ModelsPage = () => {
       name: 'i8 Evolution',
       category: 'Sports Hybrid',
       description: 'The next generation of BMW\'s iconic i8, featuring enhanced performance, extended electric range, and a stunning new design that pushes the boundaries of automotive aesthetics.',
-      image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80',
+      image:i8evolution,
       specs: [
         { label: 'Range', value: '500 km' },
         { label: 'Acceleration', value: '2.4s' },
@@ -52,7 +56,7 @@ const ModelsPage = () => {
       name: 'i7 Luxury',
       category: 'Executive Sedan',
       description: 'The pinnacle of luxury electric mobility, offering unparalleled comfort, advanced autonomous features, and a serene driving experience with zero emissions.',
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80',
+      image: i7_luxury,
       specs: [
         { label: 'Range', value: '750 km' },
         { label: 'Acceleration', value: '3.7s' },

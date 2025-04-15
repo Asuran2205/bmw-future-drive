@@ -4,6 +4,9 @@ import { ArrowRight, Lightbulb, Cpu, Leaf, TestTube, Cloud } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import r_d from '@/assets/images/r_d.png';
+import prototype from '@/assets/images/prototype.avif';
+import neutral_interface from '@/assets/images/neutral_interface.webp';
 
 interface InnovationCardProps {
   title: string;
@@ -72,7 +75,7 @@ const InnovationPage = () => {
       title: "Neural Interface Controls",
       description: "Exploring next-generation vehicle interaction through neural interfaces that can interpret driver intent through brainwave patterns.",
       icon: <TestTube className="h-6 w-6" />,
-      image: "https://images.unsplash.com/photo-1626426132933-4fae28c3cc61?auto=format&fit=crop&q=80"
+      image: neutral_interface
     },
     {
       title: "Swarm Intelligence Navigation",
@@ -166,12 +169,12 @@ const InnovationPage = () => {
                 {
                   title: "Research & Development",
                   description: "Promising concepts undergo rigorous research, with specialized teams exploring technological feasibility and innovation potential.",
-                  image: "https://images.unsplash.com/photo-1581093458791-9d19188fcd9f?auto=format&fit=crop&q=80"
+                  image: r_d
                 },
                 {
                   title: "Prototyping",
                   description: "Digital and physical prototypes are built to test concepts in increasingly realistic scenarios and environments.",
-                  image: "https://images.unsplash.com/photo-1581093198320-4dd40cdc3e9c?auto=format&fit=crop&q=80"
+                  image:prototype
                 },
                 {
                   title: "Refinement",
