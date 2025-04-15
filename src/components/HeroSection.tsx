@@ -65,7 +65,7 @@ const HeroSection = () => {
           </div>
           
           <div className="relative h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl group">
-            {/* BMW 3D Model */}
+            {/* BMW 3D Model - use the BMWCanvas component with our custom model path */}
             <BMWCanvas />
             
             {/* Overlay gradient for better text visibility */}

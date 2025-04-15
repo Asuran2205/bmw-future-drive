@@ -7,7 +7,7 @@ interface BMWCanvasProps {
   modelPath?: string;
 }
 
-const BMWCanvas = ({ modelPath = '/your-model.glb' }: BMWCanvasProps) => {
+const BMWCanvas = ({ modelPath = '/bmw-concept.glb' }: BMWCanvasProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Environment, OrbitControls, PerspectiveCamera, useGLTF } from '@react-three/drei';
-import { Group } from 'three';
+import { Group, BoxGeometry, MeshStandardMaterial, Mesh } from 'three';
 
 // Define proper interfaces for components
 interface BMWCarModelProps {
@@ -12,15 +12,79 @@ interface BMWCarModelProps {
 
 // Custom 3D model component that loads GLB file
 function Model({ modelPath }: { modelPath: string }) {
-  const { scene } = useGLTF(modelPath);
+  const [modelError, setModelError] = useState(false);
   
-  // Clone the scene to avoid issues with multiple instances
-  const model = scene.clone();
+  // Try to load the GLB file, but use a fallback if it fails
+  let model;
+  
+  try {
+    // Only try to load the actual model if we're not in error state
+    if (!modelError) {
+      const { scene } = useGLTF(modelPath);
+      model = scene.clone();
+    }
+  } catch (error) {
+    console.error("Error loading model:", error);
+    setModelError(true);
+  }
+  
+  // If there's an error or no model loaded, return a simple fallback car shape
+  if (modelError || !model) {
+    return (
+      <group>
+        {/* Car body */}
+        <mesh position={[0, 0.4, 0]}>
+          <boxGeometry args={[2, 0.5, 4]} />
+          <meshStandardMaterial color="#0066B1" metalness={0.9} roughness={0.3} />
+        </mesh>
+        
+        {/* Car top/cabin */}
+        <mesh position={[0, 0.8, 0]}>
+          <boxGeometry args={[1.5, 0.4, 2]} />
+          <meshStandardMaterial color="#005195" metalness={0.9} roughness={0.2} />
+        </mesh>
+        
+        {/* Wheels */}
+        <mesh position={[-0.9, -0.3, 1.2]}>
+          <cylinderGeometry args={[0.4, 0.4, 0.2, 32]} />
+          <meshStandardMaterial color="#111111" />
+        </mesh>
+        <mesh position={[0.9, -0.3, 1.2]}>
+          <cylinderGeometry args={[0.4, 0.4, 0.2, 32]} />
+          <meshStandardMaterial color="#111111" />
+        </mesh>
+        <mesh position={[-0.9, -0.3, -1.2]}>
+          <cylinderGeometry args={[0.4, 0.4, 0.2, 32]} />
+          <meshStandardMaterial color="#111111" />
+        </mesh>
+        <mesh position={[0.9, -0.3, -1.2]}>
+          <cylinderGeometry args={[0.4, 0.4, 0.2, 32]} />
+          <meshStandardMaterial color="#111111" />
+        </mesh>
+        
+        {/* Front lights */}
+        <mesh position={[0.7, 0.3, 1.95]}>
+          <boxGeometry args={[0.3, 0.1, 0.1]} />
+          <meshStandardMaterial color="#FFFFFF" emissive="#FFFFFF" emissiveIntensity={1} />
+        </mesh>
+        <mesh position={[-0.7, 0.3, 1.95]}>
+          <boxGeometry args={[0.3, 0.1, 0.1]} />
+          <meshStandardMaterial color="#FFFFFF" emissive="#FFFFFF" emissiveIntensity={1} />
+        </mesh>
+        
+        {/* BMW logo front */}
+        <mesh position={[0, 0.4, 2.01]}>
+          <cylinderGeometry args={[0.15, 0.15, 0.05, 32]} />
+          <meshStandardMaterial color="#333333" />
+        </mesh>
+      </group>
+    );
+  }
   
   return <primitive object={model} scale={1} />;
 }
 
-export function BMWCarModel({ rotate = true, modelPath = '/your-model.glb' }: BMWCarModelProps) {
+export function BMWCarModel({ rotate = true, modelPath = '/bmw-concept.glb' }: BMWCarModelProps) {
   const group = useRef<Group>(null);
   const [hovered, setHovered] = useState(false);
   
@@ -69,6 +133,3 @@ export function BMWCarModel({ rotate = true, modelPath = '/your-model.glb' }: BM
     </>
   );
 }
-
-// Preload the GLB model
-useGLTF.preload('/your-model.glb');
