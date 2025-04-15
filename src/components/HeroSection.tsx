@@ -1,29 +1,11 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import BMWCanvas from './BMWCanvas';
 
 const HeroSection = () => {
-  const carRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!carRef.current) return;
-      
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      const moveX = (clientX - innerWidth / 2) / 50;
-      const moveY = (clientY - innerHeight / 2) / 50;
-      
-      carRef.current.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateY(${moveX * 0.5}deg)`;
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient">
       {/* Background grid effect */}
@@ -82,45 +64,17 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="perspective" ref={carRef}>
-            <div className="relative h-72 md:h-96 lg:h-[500px] preserve-3d animate-float">
-              {/* Car silhouette */}
-              <div className="absolute inset-0 flex justify-center items-center">
-                <svg 
-                  width="100%" 
-                  height="100%" 
-                  viewBox="0 0 400 200" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full"
-                >
-                  <path 
-                    d="M120,180 C60,180 40,160 40,140 L40,120 L80,100 L80,80 L120,60 L280,60 L320,80 L320,100 L360,120 L360,140 C360,160 340,180 280,180 L120,180 Z" 
-                    fill="url(#car-gradient)" 
-                    stroke="#00a0e1" 
-                    strokeWidth="2"
-                  />
-                  <ellipse cx="100" cy="180" rx="30" ry="10" fill="#121212" fillOpacity="0.5" />
-                  <ellipse cx="300" cy="180" rx="30" ry="10" fill="#121212" fillOpacity="0.5" />
-                  <path d="M120,60 L120,40 L280,40 L280,60" stroke="#00a0e1" strokeWidth="1" />
-                  <line x1="120" y1="180" x2="280" y2="180" stroke="#00a0e1" strokeWidth="1" />
-                  <defs>
-                    <linearGradient id="car-gradient" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                      <stop offset="0" stopColor="#1c69d4" stopOpacity="0.1" />
-                      <stop offset="1" stopColor="#00a0e1" stopOpacity="0.2" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              
-              {/* Headlights glow */}
-              <div className="absolute top-1/3 left-10 w-10 h-5 bg-bmw-electric rounded-full blur-sm animate-pulse-glow"></div>
-              <div className="absolute top-1/3 right-10 w-10 h-5 bg-bmw-electric rounded-full blur-sm animate-pulse-glow"></div>
-              
-              {/* Digital elements */}
-              <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-10 border border-bmw-electric/30 rounded-lg bg-bmw-electric/5 flex items-center justify-center">
-                <span className="text-bmw-electric text-xs">AUTONOMOUS DRIVING</span>
-              </div>
+          <div className="relative h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl group">
+            {/* BMW 3D Model - use the BMWCanvas component with our custom model path */}
+            <BMWCanvas />
+            
+            {/* Overlay gradient for better text visibility */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-bmw-dark/40 via-transparent to-transparent pointer-events-none"></div>
+            
+            {/* Highlight effects */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 pointer-events-none">
+              <div className="h-0.5 w-20 bg-bmw-electric mb-4"></div>
+              <p className="text-white/90 text-sm font-light">BMW Vision Next Concept</p>
             </div>
           </div>
         </div>
