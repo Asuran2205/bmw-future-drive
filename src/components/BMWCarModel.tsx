@@ -2,7 +2,23 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Environment, OrbitControls, PerspectiveCamera, Box, Cylinder, MeshDistortMaterial } from '@react-three/drei';
-import { Group } from 'three';
+import { Group, Vector3 } from 'three';
+
+// Define proper type for the Wheel component
+interface WheelProps {
+  position: [number, number, number];
+}
+
+// Wheel component with proper typing
+function Wheel({ position }: WheelProps) {
+  return (
+    <mesh position={position}>
+      <Cylinder args={[0.4, 0.4, 0.2, 32]} rotation={[Math.PI / 2, 0, 0]}>
+        <meshStandardMaterial color="#111111" />
+      </Cylinder>
+    </mesh>
+  );
+}
 
 export function BMWCarModel({ rotate = true }) {
   const group = useRef<Group>(null);
@@ -81,16 +97,5 @@ export function BMWCarModel({ rotate = true }) {
       {/* Add environment map for realistic reflections */}
       <Environment preset="city" />
     </>
-  );
-}
-
-// Wheel component for reuse
-function Wheel({ position }) {
-  return (
-    <mesh position={position}>
-      <Cylinder args={[0.4, 0.4, 0.2, 32]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#111111" />
-      </Cylinder>
-    </mesh>
   );
 }
