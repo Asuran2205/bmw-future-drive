@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import r_d from '@/assets/images/r_d.png';
 import prototype from '@/assets/images/prototype.avif';
 import neutral_interface from '@/assets/images/neutral_interface.webp';
+import BMW_mobility from '@/assets/images/mobilty.png'
 
 interface InnovationCardProps {
   title: string;
@@ -99,9 +100,9 @@ const InnovationPage = () => {
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1588675800148-2561265c4f4d?auto=format&fit=crop&q=80" 
+              src={BMW_mobility}
               alt="BMW Innovation" 
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-80"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-bmw-dark via-bmw-dark/90 to-bmw-dark/80"></div>
           </div>

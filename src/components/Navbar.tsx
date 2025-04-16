@@ -52,7 +52,7 @@ const Navbar = () => {
               <path d="M47 24C24 24 24 24 24 47" stroke="currentColor" strokeWidth="2" />
             </svg>
           </div>
-          <span className="text-xl font-bold tracking-tighter">BMW Future</span>
+          <span className="text-xl font-bold tracking-tighter">BMW</span>
         </Link>
 
         {/* Desktop Navigation */}

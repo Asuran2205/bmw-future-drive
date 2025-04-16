@@ -5,6 +5,13 @@ import { Zap, ShieldCheck, Smartphone, Gauge, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BMWelctric from '@/assets/images/BMW_Electric_square.webp';
+import BMW_Autonomous from '@/assets/images/autonomous_bmw.webp';
+import BMW_connected from '@/assets/images/BMW_connected.webp';
+import BMW_performance from '@/assets/images/performance.jpg';
+import Electric_PowerTrain from '@/assets/images/Electric_PowerTrain.avif';
+import Autonomous_system from '@/assets/images/autonomous_system.jpg';
+import Cutting_edge from '@/assets/images/cutting_edge.png';
 
 const TechnologyPage = () => {
   const technologies = [
@@ -12,7 +19,7 @@ const TechnologyPage = () => {
       id: "electric",
       title: "Electric Drive",
       description: "BMW's next generation electric powertrain delivers exceptional performance with zero emissions, redefining the driving experience.",
-      image: "https://images.unsplash.com/photo-1593941707882-a5bfcccfc5af?auto=format&fit=crop&q=80",
+      image: BMWelctric,
       features: [
         "800V architecture for ultra-fast charging",
         "Next-generation energy-dense battery cells",
@@ -24,7 +31,7 @@ const TechnologyPage = () => {
       id: "autonomy",
       title: "Autonomous Driving",
       description: "Our Level 4 autonomous driving system uses advanced AI to navigate complex environments while providing a safe and relaxing journey.",
-      image: "https://images.unsplash.com/photo-1617704548623-340376564e68?auto=format&fit=crop&q=80",
+      image: BMW_Autonomous,
       features: [
         "360° LiDAR and sensor fusion technology",
         "Self-learning neural networks for predictive driving",
@@ -36,7 +43,7 @@ const TechnologyPage = () => {
       id: "connectivity",
       title: "Connected Ecosystem",
       description: "BMW's connected technology platform seamlessly integrates your digital life with your driving experience, adapting to your needs and preferences.",
-      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80",
+      image: BMW_connected,
       features: [
         "5G connectivity with edge computing",
         "Vehicle-to-Everything (V2X) communication",
@@ -48,7 +55,7 @@ const TechnologyPage = () => {
       id: "performance",
       title: "Dynamic Performance",
       description: "The perfect balance of power, precision, and efficiency, delivering the ultimate driving experience that BMW is renowned for.",
-      image: "https://images.unsplash.com/photo-1565043589226-145b91176915?auto=format&fit=crop&q=80",
+      image: BMW_performance,
       features: [
         "Adaptive air suspension with predictive comfort control",
         "Intelligent all-wheel drive with torque vectoring",
@@ -87,9 +94,9 @@ const TechnologyPage = () => {
           <div className="absolute inset-0 bg-bmw-grid bg-[size:30px_30px] opacity-10 z-0"></div>
           <div className="absolute top-0 right-0 w-full h-full overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1553260570-d0dcfe8a6cbe?auto=format&fit=crop&q=80" 
+              src={Cutting_edge}
               alt="BMW Technology" 
-              className="w-full h-full object-cover opacity-20"
+              className="w-full h-full object-cover opacity-80"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-bmw-dark via-bmw-dark/90 to-transparent"></div>
           </div>
@@ -196,7 +203,7 @@ const TechnologyPage = () => {
                     { label: "Charging Speed", value: "350 kW" },
                     { label: "Range (WLTP)", value: "700 km" }
                   ],
-                  image: "https://images.unsplash.com/photo-1619152677528-0c0c7ce60938?auto=format&fit=crop&q=80"
+                  image: Electric_PowerTrain
                 },
                 {
                   title: "Autonomous System",
@@ -206,7 +213,7 @@ const TechnologyPage = () => {
                     { label: "Self-Driving Level", value: "Level 4" },
                     { label: "Update Frequency", value: "OTA Monthly" }
                   ],
-                  image: "https://images.unsplash.com/photo-1563459802257-2a97df940f11?auto=format&fit=crop&q=80"
+                  image: Autonomous_system
                 },
                 {
                   title: "Connectivity",

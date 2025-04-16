@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useToast } from '@/components/ui/use-toast';
+import test_drive from '@/assets/images/test_drive.png'
 
 const TestDrivePage = () => {
   const { toast } = useToast();
@@ -66,7 +67,7 @@ const TestDrivePage = () => {
         {/* Hero Section */}
         <section className="relative h-[50vh] overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2000" 
+            src={test_drive}
             alt="BMW Test Drive" 
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -190,7 +191,7 @@ const TestDrivePage = () => {
                     </div>
                     
                     <div className="md:col-span-2">
-                      <label htmlFor="model" className="block text-sm font-medium mb-2">Select Model</label>
+                      <label htmlFor="model" className="block text-sm font-medium mb-2 ">Select Model</label>
                       <select
                         id="model"
                         name="model"
@@ -199,9 +200,9 @@ const TestDrivePage = () => {
                         required
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md focus:outline-none focus:border-bmw-electric text-white"
                       >
-                        <option value="">Select a vehicle</option>
+                        <option className='text-black' value="">Select a vehicle</option>
                         {models.map(model => (
-                          <option key={model.id} value={model.name}>{model.name}</option>
+                          <option className='text-black' key={model.id} value={model.name}>{model.name}</option>
                         ))}
                       </select>
                     </div>
@@ -216,9 +217,9 @@ const TestDrivePage = () => {
                         required
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md focus:outline-none focus:border-bmw-electric text-white"
                       >
-                        <option value="">Select a location</option>
+                        <option className='text-black' value="">Select a location</option>
                         {locations.map(location => (
-                          <option key={location} value={location}>{location}</option>
+                          <option className='text-black' key={location} value={location}>{location}</option>
                         ))}
                       </select>
                     </div>
@@ -235,7 +236,7 @@ const TestDrivePage = () => {
                           required
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md focus:outline-none focus:border-bmw-electric text-white"
                         />
-                        <Calendar className="absolute right-3 top-3 h-5 w-5 text-gray-400 pointer-events-none" />
+                        {/* <Calendar className="absolute right-3 top-3 h-5 w-5 text-gray-400 pointer-events-none" /> */}
                       </div>
                     </div>
                     
@@ -251,7 +252,7 @@ const TestDrivePage = () => {
                           required
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md focus:outline-none focus:border-bmw-electric text-white"
                         />
-                        <Clock className="absolute right-3 top-3 h-5 w-5 text-gray-400 pointer-events-none" />
+                        {/* <Clock className="absolute right-3 top-3 h-5 w-5 text-gray-400 pointer-events-none" /> */}
                       </div>
                     </div>
                     

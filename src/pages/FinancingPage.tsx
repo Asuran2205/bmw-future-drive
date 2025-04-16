@@ -4,6 +4,7 @@ import { Calculator, Clock, Percent, CreditCard, ChevronDown, CheckCircle } from
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Finance from '@/assets/images/financing.png'
 
 const FinancingPage = () => {
   const financingOptions = [
@@ -52,7 +53,7 @@ const FinancingPage = () => {
         {/* Hero Section */}
         <section className="relative h-[50vh] overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?auto=format&fit=crop&q=80&w=2000" 
+            src={Finance}
             alt="BMW Financing" 
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -183,11 +184,11 @@ const FinancingPage = () => {
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md focus:outline-none focus:border-bmw-electric text-white"
                           defaultValue="48"
                         >
-                          <option value="24">24 Months</option>
-                          <option value="36">36 Months</option>
-                          <option value="48">48 Months</option>
-                          <option value="60">60 Months</option>
-                          <option value="72">72 Months</option>
+                          <option className='text-black' value="24">24 Months</option>
+                          <option className='text-black' value="36">36 Months</option>
+                          <option className='text-black' value="48">48 Months</option>
+                          <option className='text-black' value="60">60 Months</option>
+                          <option className='text-black' value="72">72 Months</option>
                         </select>
                       </div>
                     </div>

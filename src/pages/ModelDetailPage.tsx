@@ -5,6 +5,23 @@ import { ArrowLeft, ChevronRight, Fuel, Gauge, BatteryCharging, Timer } from 'lu
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import vision_next from '@/assets/images/vision_next.jpg';
+import ixflow from '@/assets/images/ix-flow.jpg';
+import i8evolution from '@/assets/images/i8-evolution.jpg';
+import i7_luxury from '@/assets/images/i7_luxury.jpg';
+import vision_gallery_1 from '@/assets/images/vision_gallery_1.jpg';
+import vision_gallery_2 from '@/assets/images/vision_gallery_2.jpg';
+import vision_gallery_3 from '@/assets/images/vision_gallery_3.jpg';
+import ix_flow_gallery_4 from '@/assets/images/ix_flow_gallery_4.jpg';
+import ix_flow_gallery_2 from '@/assets/images/ix_flow_gallery_2.webp';
+import ix_flow_gallery_3 from '@/assets/images/ix_flow_gallery_3.webp';
+import i8_evloution_1 from '@/assets/images/i8_evloution_1.jpg';
+import i8_evloution_2 from '@/assets/images/i8_evloution_2.avif';
+import i8_evloution_3 from '@/assets/images/i8_evloution_3.jpg';
+import i7_luxury_1 from '@/assets/images/i7_luxury_1.webp';
+import i7_luxury_2 from '@/assets/images/i7_luxury_2.avif';
+import i7_luxury_3 from '@/assets/images/i7_luxury_3.jpg';
+
 
 const ModelDetailPage = () => {
   const { modelId } = useParams();
@@ -14,11 +31,11 @@ const ModelDetailPage = () => {
     'vision-next': {
       name: 'Vision NEXT',
       category: 'Electric Concept',
-      heroImage: 'https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80&w=2000',
+      heroImage: vision_next,
       galleryImages: [
-        'https://images.unsplash.com/photo-1611016186353-9af58c69a533?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1606664913048-da954e13c6d4?auto=format&fit=crop&q=80&w=1200'
+        vision_gallery_1,
+        vision_gallery_2,
+        vision_gallery_3
       ],
       description: 'A revolutionary concept car that showcases BMW\'s vision for the future of mobility. Featuring autonomous driving, sustainable materials, and cutting-edge technology.',
       longDescription: 'The BMW Vision NEXT represents a paradigm shift in automotive design and technology. This visionary concept vehicle seamlessly integrates sustainable materials, advanced AI systems, and a revolutionary electric drivetrain to deliver an unparalleled driving experience. The Vision NEXT is not just a car; it\'s a glimpse into BMW\'s commitment to shaping the future of mobility with innovation, performance, and environmental responsibility at its core.',
@@ -40,11 +57,11 @@ const ModelDetailPage = () => {
     'ix-flow': {
       name: 'iX Flow',
       category: 'Autonomous SUV',
-      heroImage: 'https://images.unsplash.com/photo-1556800572-1b8aeef2c54f?auto=format&fit=crop&q=80&w=2000',
+      heroImage: ixflow,
       galleryImages: [
-        'https://images.unsplash.com/photo-1549275301-c9d60945c7aa?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1556800572-01d9e1d28619?auto=format&fit=crop&q=80&w=1200'
+        ix_flow_gallery_2,
+        ix_flow_gallery_3,
+        ix_flow_gallery_4
       ],
       description: 'The future of SUVs with color-changing e-ink exterior technology, fully autonomous driving capabilities, and a spacious interior designed for comfort and entertainment.',
       longDescription: 'The BMW iX Flow redefines what an SUV can be with its groundbreaking e-ink exterior technology that allows the vehicle to change colors at the press of a button. This revolutionary feature is not just about aesthetics—it provides real-world benefits like temperature regulation by reflecting or absorbing heat based on the selected color. Inside, the iX Flow offers a spacious lounge-like environment where passengers can relax while the vehicle handles the driving, thanks to its advanced autonomous capabilities.',
@@ -66,11 +83,11 @@ const ModelDetailPage = () => {
     'i8-evolution': {
       name: 'i8 Evolution',
       category: 'Sports Hybrid',
-      heroImage: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2000',
+      heroImage: i8evolution,
       galleryImages: [
-        'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1200', 
-        'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200'
+        i8_evloution_1,
+        i8_evloution_2, 
+        i8_evloution_3
       ],
       description: 'The next generation of BMW\'s iconic i8, featuring enhanced performance, extended electric range, and a stunning new design that pushes the boundaries of automotive aesthetics.',
       longDescription: 'Building on the revolutionary foundation of its predecessor, the BMW i8 Evolution takes the concept of a hybrid sports car to new heights. With a completely redesigned powertrain that delivers more power and efficiency, the i8 Evolution can switch seamlessly between pure electric mode for city driving and hybrid mode for exhilarating performance on open roads. The dramatically sculpted exterior isn\'t just visually stunning—it\'s functional, with every curve and angle designed to optimize aerodynamics for improved efficiency and performance.',
@@ -92,11 +109,11 @@ const ModelDetailPage = () => {
     'i7-luxury': {
       name: 'i7 Luxury',
       category: 'Executive Sedan',
-      heroImage: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=2000',
+      heroImage: i7_luxury,
       galleryImages: [
-        'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1617814076668-11c2c6305345?auto=format&fit=crop&q=80&w=1200',
-        'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1200'
+        i7_luxury_1,
+        i7_luxury_2,
+        i7_luxury_3
       ],
       description: 'The pinnacle of luxury electric mobility, offering unparalleled comfort, advanced autonomous features, and a serene driving experience with zero emissions.',
       longDescription: 'The BMW i7 Luxury represents the pinnacle of sustainable premium mobility. This all-electric flagship sedan combines the opulence of a traditional luxury vehicle with the environmental responsibility of zero-emission driving. Inside, the i7 Luxury offers a sanctuary of comfort, with executive seating that features massage functions, temperature control, and adjustable positioning. The integrated digital experience is powered by the latest BMW Operating System, which learns driver preferences and adjusts the vehicle settings accordingly. With extended electric range and fast-charging capability, the i7 Luxury ensures that sustainable driving never compromises on convenience.',

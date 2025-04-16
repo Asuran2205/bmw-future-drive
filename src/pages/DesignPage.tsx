@@ -11,6 +11,23 @@ import {
 } from "@/components/ui/carousel";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Design from '@/assets/images/Design_Future.png';
+import Bold_precicison from '@/assets/images/bold_precision.png';
+import Luxury from '@/assets/images/luxury.png';
+import Design_interior from '@/assets/images/design_interior.jpg';
+import Desighn_Fusion from '@/assets/images/design_fusion.png';
+import emotional_dynamics from '@/assets/images/emotional_dynamics.png';
+import simplicity from '@/assets/images/simplicity.png';
+import exterior_showcase_1 from '@/assets/images/exterior_showcase_1.png';
+import exterior_showcase_2 from '@/assets/images/exterior_showcase_2.png';
+import exterior_showcase_3 from '@/assets/images/exterior_showcase_3.png';
+import exterior_showcase_4 from '@/assets/images/exterior_showcase_4.png';
+import interior_showcase_1 from '@/assets/images/interior_showcase_1.png';
+import interior_showcase_2 from '@/assets/images/interior_showcase_2.png';
+import interior_showcase_3 from '@/assets/images/interior_showcase_3.png';
+import interior_showcase_4 from '@/assets/images/interior_showcase_4.png';
+import design_philosophy from '@/assets/images/bmw_philosophy.jpeg'
+
 
 interface DesignPrincipleProps {
   number: string;
@@ -51,37 +68,37 @@ const DesignPage = () => {
       number: "01",
       title: "Bold Precision",
       description: "Minimalist aesthetics with intentional details that highlight BMW's precision engineering and technological focus.",
-      image: "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&q=80"
+      image: Bold_precicison
     },
     {
       number: "02",
       title: "Sustainable Luxury",
       description: "Using recycled and innovative sustainable materials without compromising on the premium feel and quality BMW is known for.",
-      image: "https://images.unsplash.com/photo-1552661397-4233881ea8c7?auto=format&fit=crop&q=80"
+      image: Luxury
     },
     {
       number: "03",
       title: "Adaptive Spaces",
       description: "Interiors that transform to different use cases, from focused driving to relaxation and productivity in autonomous mode.",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80"
+      image: Design_interior
     },
     {
       number: "04",
       title: "Digital-Physical Fusion",
       description: "Seamless integration of digital interfaces with physical controls, creating an intuitive and immersive user experience.",
-      image: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80"
+      image: Desighn_Fusion
     },
     {
       number: "05",
       title: "Emotional Dynamics",
       description: "Design that evokes emotion through dynamic proportions and distinctive silhouettes that are unmistakably BMW.",
-      image: "https://images.unsplash.com/photo-1602188256777-73064187f068?auto=format&fit=crop&q=80"
+      image: emotional_dynamics
     },
     {
       number: "06",
       title: "Intelligent Simplicity",
       description: "Clean, uncluttered design that highlights essential elements and creates a sense of calm and clarity.",
-      image: "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?auto=format&fit=crop&q=80"
+      image: simplicity
     }
   ];
 
@@ -89,19 +106,19 @@ const DesignPage = () => {
     {
       title: "Exterior Innovation",
       images: [
-        "https://images.unsplash.com/photo-1549399542-7e738e797201?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1555652736-e92021d28a10?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80"
+        exterior_showcase_1,
+        exterior_showcase_2,
+        exterior_showcase_3,
+        exterior_showcase_4
       ]
     },
     {
       title: "Interior Evolution",
       images: [
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1556800572-1b8aeef2c54f?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1536364127590-1594e3161294?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1581788604067-4f91333c256f?auto=format&fit=crop&q=80"
+        interior_showcase_1,
+        interior_showcase_2,
+        interior_showcase_3,
+        interior_showcase_4        
       ]
     }
   ];
@@ -141,7 +158,7 @@ const DesignPage = () => {
               
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden order-1 md:order-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1611566026373-c6c8da0945ba?auto=format&fit=crop&q=80" 
+                  src={Design}
                   alt="BMW Design Studio" 
                   className="w-full h-full object-cover"
                 />
@@ -215,8 +232,8 @@ const DesignPage = () => {
                         ))}
                       </CarouselContent>
                       <div className="mt-8 flex justify-center gap-4">
-                        <CarouselPrevious className="relative static transform-none" />
-                        <CarouselNext className="relative static transform-none" />
+                        <CarouselPrevious className="relative transform-none" />
+                        <CarouselNext className="relative transform-none" />
                       </div>
                     </Carousel>
                   </div>
@@ -232,7 +249,7 @@ const DesignPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative aspect-video rounded-xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?auto=format&fit=crop&q=80" 
+                  src={design_philosophy}
                   alt="BMW Design Philosophy" 
                   className="w-full h-full object-cover"
                 />
