@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+📄 BMW Future Drive
 
-## Project info
+BMW Future Drive is a sleek, responsive, and futuristic landing page built using React, Vite, and Tailwind CSS.Perfect for showcasing high-end automotive designs, technology products, or premium brands.
 
-**URL**: https://lovable.dev/projects/6451a77d-65ad-4c15-86d7-469f3d602a1e
+🚀 Demo
 
-## How can I edit this code?
+Live Preview: (Coming Soon)Deploy easily with Vercel or Netlify.
 
-There are several ways of editing your application.
+🛠️ Features
 
-**Use Lovable**
+Modern and futuristic design
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6451a77d-65ad-4c15-86d7-469f3d602a1e) and start prompting.
+Fully responsive for all devices
 
-Changes made via Lovable will be committed automatically to this repo.
+Fast performance with Vite
 
-**Use your preferred IDE**
+Styled with Tailwind CSS
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Smooth scrolling experience
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Modular, clean React components
 
-Follow these steps:
+🧹 Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+React
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Vite
 
-# Step 3: Install the necessary dependencies.
-npm i
+Tailwind CSS
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+JavaScript (ES6+)
+
+📦 Installation
+
+Follow these steps to run the project locally:
+# 1. Navigate to the project directory
+cd bmw-future-drive
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+The app should now be running on http://localhost:5173
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+📁 Folder Structure
 
-**Use GitHub Codespaces**
+bmw-future-drive/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.jsx
+│   ├── main.jsx
+├── index.html
+├── tailwind.config.js
+├── vite.config.js
+├── package.json
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6451a77d-65ad-4c15-86d7-469f3d602a1e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Thankyou
