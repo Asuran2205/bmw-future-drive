@@ -47,16 +47,16 @@ The app should now be running on http://localhost:5173
 📁 Folder Structure
 
 bmw-future-drive/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── App.jsx
-│   ├── main.jsx
-├── index.html
-├── tailwind.config.js
-├── vite.config.js
-├── package.json
+-->public/
+--> src/
+>   --> assets/
+>   --> components/
+>   --> App.jsx
+>   --> main.jsx
+--> index.html
+--> tailwind.config.js
+--> vite.config.js
+--> package.json
 
 
 Thankyou
